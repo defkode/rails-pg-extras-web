@@ -1,14 +1,11 @@
 # PgExtras::Web
-Short description and motivation.
-
-## Usage
-How to use my plugin.
+Web UI for rails-pg-extras
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'pg_extras-web'
+gem 'pg_extras-web', github: 'defkode/pg_extras_web'
 ```
 
 And then execute:
@@ -16,13 +13,12 @@ And then execute:
 $ bundle
 ```
 
-Or install it yourself as:
-```bash
-$ gem install pg_extras-web
+Update config/routes.rb
+
+```ruby
+mount PgExtras::Web::Engine, at: 'pg_extras'
 ```
 
-## Contributing
-Contribution directions go here.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
