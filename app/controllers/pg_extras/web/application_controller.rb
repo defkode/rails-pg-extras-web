@@ -3,6 +3,10 @@ module PgExtras
     class ApplicationController < ActionController::Base
       layout "pg_extras/web/application"
 
+      if Rails.env.production? && ENV['PG_EXTRAS_USER'].present? && ENV['PG_EXTRAS_PASSWORD'].present?
+        http_basic_authenticate_with name: ENV['PG_EXTRAS_USER'], password: ENV['PG_EXTRAS_PASS']
+      end
+
       protect_from_forgery with: :exception
 
       helper_method :pg_stats_statements_enabled?
