@@ -5,7 +5,7 @@ Web UI for rails-pg-extras-web
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rails-pg-extras-web', github: 'defkode/pg_extras_web'
+gem 'rails-pg-extras-web', github: 'defkode/rails-pg-extras-web'
 ```
 
 And then execute:
