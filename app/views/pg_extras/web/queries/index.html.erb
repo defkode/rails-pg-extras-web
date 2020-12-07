@@ -1,0 +1,6 @@
+<form>
+  <%= select_tag :query_name, options_for_select(@all_queries, @query_name) %>
+  <button type="submit">Run</button>
+</form>
+
+<pre style="background-color: #e2e2e2; font-family: Menlo; font-size: smaller"><%= @table %></pre>
