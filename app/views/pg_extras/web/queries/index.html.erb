@@ -1,6 +1,10 @@
-<form>
-  <%= select_tag :query_name, options_for_select(@all_queries, @query_name) %>
-  <button type="submit">Run</button>
-</form>
+<% unless pg_stats_statements_enabled? %>
+  <span style='color: red'>
+    WARNING: <b><u>outliers</u></b>, <b><u>calls</u></b> require extension: <b>pg_stat_statements</b>
+  </span>
 
-<pre style="background-color: #e2e2e2; font-family: Menlo; font-size: smaller"><%= @table %></pre>
+  <h4>Rails</h4>
+  <pre style='background-color: #e2e2e2; padding: 10px'>ActiveRecord::Base.connection.enable_extension "pg_stat_statements"</pre>
+  <h4>SQL</h4>
+  <pre style='background-color: #e2e2e2; padding: 10px'>CREATE EXTENSION pg_stat_statements</pre>
+<% end %>

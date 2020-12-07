@@ -7,7 +7,7 @@ require "pg_extras/web/version"
 Gem::Specification.new do |spec|
   spec.name        = "pg_extras-web"
   spec.version     = PgExtras::Web::VERSION
-  spec.authors     = ["defkode"]
+  spec.authors     = ["Tomasz Mazur"]
   spec.email       = ["defkode@gmail.com"]
   spec.summary     = "Summary of PgExtras::Web."
   spec.license     = "MIT"

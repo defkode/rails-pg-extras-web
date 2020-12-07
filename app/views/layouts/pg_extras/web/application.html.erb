@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pg extras web</title>
+  <title>PG::Extras</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 </head>
-<body>
+<body onload="document.forms.queries.query_name.focus()">
+  <%= form_with url: run_query_url, id: "queries" do |f| %>
+    <%= f.select :query_name, options_for_select(@all_queries.except(:kill_all, :mandelbrot), params[:query_name]),
+      prompt: "--- select query ---"
+    %>
 
-<%= yield %>
+    <button type="submit">Run</button>
+  <% end %>
 
+  <div style='margin-top: 20px'>
+    <%= yield %>
+  </div>
 </body>
 </html>
