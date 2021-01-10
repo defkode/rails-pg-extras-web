@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     rails-pg-extras-web (0.1.0)
-      pg
+      pg (~> 1.2)
       rails-pg-extras (~> 1.2)
 
 GEM
