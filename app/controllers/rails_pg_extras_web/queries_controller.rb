@@ -7,7 +7,7 @@ module RailsPgExtrasWeb
     def run
       if @query_name = params[:query_name].presence
         begin
-          @result = ActiveRecord::Base.connection.execute RubyPGExtras.sql_for(query_name: @query_name)
+          @result = RailsPGExtras.run_query(query_name: @query_name.to_sym, in_format: :raw)
         rescue ActiveRecord::StatementInvalid => e
           @error = e.message
         end
