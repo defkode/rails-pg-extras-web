@@ -5,7 +5,7 @@ module RailsPgExtrasWeb
     layout "rails_pg_extras_web/application"
 
     if Rails.env.production? && ENV['PG_EXTRAS_USER'].present? && ENV['PG_EXTRAS_PASSWORD'].present?
-      http_basic_authenticate_with name: ENV['PG_EXTRAS_USER'], password: ENV['PG_EXTRAS_PASS']
+      http_basic_authenticate_with name: ENV['PG_EXTRAS_USER'], password: ENV['PG_EXTRAS_PASSWORD']
     end
 
     protect_from_forgery with: :exception
