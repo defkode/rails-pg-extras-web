@@ -1,5 +1,5 @@
 RailsPgExtrasWeb::Engine.routes.draw do
-  root to: "queries#index"
+  resources :queries, only: :index
 
-  post "/queries/run", as: :run_query
+  root to: "queries#index"
 end

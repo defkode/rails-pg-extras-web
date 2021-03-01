@@ -8,8 +8,6 @@ module RailsPgExtrasWeb
       http_basic_authenticate_with name: ENV['PG_EXTRAS_USER'], password: ENV['PG_EXTRAS_PASSWORD']
     end
 
-    protect_from_forgery with: :exception
-
     helper_method :pg_stats_statements_enabled?
 
     private
