@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    rails-pg-extras-web (1.4.1)
+    rails-pg-extras-web (1.5.3)
       pg (~> 1.2)
-      rails-pg-extras (~> 1.4.0)
+      rails-pg-extras (~> 1.5.0)
 
 GEM
   remote: https://rubygems.org/
@@ -24,10 +24,10 @@ GEM
       concurrent-ruby (~> 1.0)
     minitest (5.14.4)
     pg (1.2.3)
-    rails-pg-extras (1.4.0)
+    rails-pg-extras (1.5.3)
       activerecord
-      ruby-pg-extras (= 1.4.0)
-    ruby-pg-extras (1.4.0)
+      ruby-pg-extras (= 1.5.3)
+    ruby-pg-extras (1.5.3)
       pg
       terminal-table
     terminal-table (3.0.0)
