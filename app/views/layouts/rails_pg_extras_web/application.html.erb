@@ -2,11 +2,9 @@
 <html>
 <head>
   <title>PG::Extras</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
 </head>
 <body onload="document.forms.queries.query_name.focus()">
-  <%= form_with url: run_query_url, id: "queries" do |f| %>
+  <%= form_with url: queries_path, id: "queries", method: :get do |f| %>
     <%= f.select :query_name, options_for_select(@all_queries.except(:kill_all, :mandelbrot), params[:query_name]),
       prompt: "--- select query ---"
     %>
