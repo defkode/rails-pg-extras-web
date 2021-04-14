@@ -1,12 +1,14 @@
-<% unless pg_stats_statements_enabled? %>
-  <span style='color: red'>
-    WARNING: <b><u>outliers</u></b>, <b><u>calls</u></b> require extension: <b>pg_stat_statements</b>
-  </span>
+<% if unavilable_extensions.any? && !@result %>
+  <% unavilable_extensions.each do |extension, queries| %>
+    <span style='color: orange'>
+      WARNING: Queries <%= queries.map { |q| "<b><u>#{q}</u></b>" }.join(", ").html_safe %> require extension: <b><%= extension %></b>
+    </span>
 
-  <h4>Rails</h4>
-  <pre style='background-color: #e2e2e2; padding: 10px'>ActiveRecord::Base.connection.enable_extension "pg_stat_statements"</pre>
-  <h4>SQL</h4>
-  <pre style='background-color: #e2e2e2; padding: 10px'>CREATE EXTENSION pg_stat_statements</pre>
+    <h4>Rails</h4>
+    <pre style='background-color: #e2e2e2; padding: 10px'>ActiveRecord::Base.connection.enable_extension "<%= extension %>"</pre>
+    <h4>SQL</h4>
+    <pre style='background-color: #e2e2e2; padding: 10px'>CREATE EXTENSION <%= extension %></pre>
+  <% end %>
 <% end %>
 
 <% if @error %>
