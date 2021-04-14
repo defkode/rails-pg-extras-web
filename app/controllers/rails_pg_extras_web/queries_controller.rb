@@ -6,7 +6,7 @@ module RailsPgExtrasWeb
     }
 
     before_action :load_queries
-    helper_method :unavilable_extensions
+    helper_method :unavailable_extensions
 
     def index
       @query_name = params[:query_name]&.to_sym.presence_in(@all_queries.keys)
@@ -33,19 +33,19 @@ module RailsPgExtrasWeb
     def query_disabled?(query_name)
       case query_name
       when :calls, :outliers
-        unavilable_extensions.key?(:pg_stat_statements)
+        unavailable_extensions.key?(:pg_stat_statements)
       when :buffercache_stats, :buffercache_usage
-        unavilable_extensions.key?(:pg_buffercache)
+        unavailable_extensions.key?(:pg_buffercache)
       else
         false
       end
     end
 
-    def unavilable_extensions
-      return @unavilable_extensions if defined?(@unavilable_extensions)
+    def unavailable_extensions
+      return @unavailable_extensions if defined?(@unavailable_extensions)
 
       extensions = ActiveRecord::Base.connection.extensions
-      @unavilable_extensions = REQUIRED_EXTENSIONS.select { |extension, _| !extensions.include?(extension.to_s) }
+      @unavailable_extensions = REQUIRED_EXTENSIONS.select { |extension, _| !extensions.include?(extension.to_s) }
     end
   end
 end

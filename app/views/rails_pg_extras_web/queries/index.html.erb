@@ -1,5 +1,5 @@
-<% if unavilable_extensions.any? && !@result %>
-  <% unavilable_extensions.each do |extension, queries| %>
+<% if unavailable_extensions.any? && !@result %>
+  <% unavailable_extensions.each do |extension, queries| %>
     <span style='color: orange'>
       WARNING: Queries <%= queries.map { |q| "<b><u>#{q}</u></b>" }.join(", ").html_safe %> require extension: <b><%= extension %></b>
     </span>
