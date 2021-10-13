@@ -1,0 +1,24 @@
+<%= content_for :title, params[:query_name].presence || "pg_extras" %>
+<%= render "rails_pg_extras_web/shared/queries_selector" %>
+
+<% if @error %>
+  <span class="text-red"><%= @error %></span>
+<% else %>
+  <% if @result&.any? %>
+    <%= render "result",
+      title: RubyPGExtras.description_for(query_name: @query_name),
+      headers: @result[0].keys,
+      rows: @result.values
+    %>
+  <% else %>
+   <div class="font-mono p-3 bg-gray-100 mt-3">No results</div>
+  <% end %>
+<% end %>
+
+<style>
+@media print {
+  form {
+    display: none
+  }
+}
+</style>

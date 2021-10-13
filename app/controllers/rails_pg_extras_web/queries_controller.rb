@@ -9,19 +9,25 @@ module RailsPgExtrasWeb
     helper_method :unavailable_extensions
 
     def index
-      @query_name = params[:query_name]&.to_sym.presence_in(@all_queries.keys)
-      return unless @query_name
+      if params[:query_name].present?
+        @query_name = params[:query_name].to_sym.presence_in(@all_queries.keys)
+        return unless @query_name
 
-      @result = RailsPGExtras.run_query(query_name: @query_name.to_sym, in_format: :raw)
-    rescue ActiveRecord::StatementInvalid => e
-      @error = e.message
+        begin
+          @result = RailsPGExtras.run_query(query_name: @query_name.to_sym, in_format: :raw)
+        rescue ActiveRecord::StatementInvalid => e
+          @error = e.message
+        end
+
+        render :show
+      end
     end
 
     private
 
     def load_queries
       @all_queries = RailsPGExtras::QUERIES.inject({}) do |memo, query_name|
-        unless query_name.in? %i[kill_all mandelbrot]        
+        unless query_name.in? %i[kill_all mandelbrot]
           memo[query_name] = { disabled: query_disabled?(query_name) }
         end
 

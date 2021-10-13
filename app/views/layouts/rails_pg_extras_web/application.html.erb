@@ -5,15 +5,6 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="p-5 text-xs">
-  <%= form_with url: queries_path, id: "queries", method: :get do |f| %>
-    <%= f.select :query_name, options_for_select(@all_queries, params[:query_name]),
-      {prompt: "--- select query ---"},
-      {class: "border p-2 font-bold", autofocus: true}
-    %>
-
-    <button type="submit" class="border p-2 bg-black text-white rounded">Run</button>
-  <% end %>
-
   <%= yield %>
 </body>
 </html>
