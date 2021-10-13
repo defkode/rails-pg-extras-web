@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PG::Extras</title>
+  <title><%= content_for :title %></title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body onload="document.forms.queries.query_name.focus()">
-  <%= form_with url: queries_path, id: "queries", method: :get do |f| %>
-    <%= f.select :query_name, options_for_select(@all_queries.except(:kill_all, :mandelbrot), params[:query_name]),
-      prompt: "--- select query ---"
-    %>
-
-    <button type="submit">Run</button>
-  <% end %>
-
-  <div style='margin-top: 20px'>
-    <%= yield %>
-  </div>
+<body class="p-5 text-xs">
+  <%= yield %>
 </body>
 </html>
