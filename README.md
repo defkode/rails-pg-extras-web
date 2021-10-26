@@ -1,6 +1,8 @@
 # RailsPgExtrasWeb
 Web UI for [rails-pg-extras](https://github.com/pawurb/rails-pg-extras)
 
+![WebUI](https://raw.githubusercontent.com/pawurb/rails-pg-extras/master/rails-pg-extras-web.png)
+
 ## Installation
 Add this line to your application's Gemfile:
 
