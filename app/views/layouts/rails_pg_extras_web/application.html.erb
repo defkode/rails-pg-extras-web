@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= content_for :title %></title>
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="p-5 text-xs">
-  <%= yield %>
-</body>
+  <head>
+    <title><%= content_for :title %> |  v<%= RailsPGExtras::VERSION %></title>
+    <%= javascript_include_tag "https://unpkg.com/@rails/ujs" %>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="p-5 text-xs">
+    <%= yield %>
+  </body>
 </html>

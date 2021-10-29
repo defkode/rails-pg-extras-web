@@ -2,3 +2,7 @@
 <%= render "rails_pg_extras_web/shared/queries_selector" %>
 
 <%= render "unavailable_extensions_warning" if unavailable_extensions.any? %>
+
+<%= link_to "kill_all", queries_path, method: "post", data: { confirm: "Sure?" }, class: 'border p-3 bg-red-500 text-white hover:bg-red-600 font-bold rounded' %>
+<%= link_to "pg_stat_statements_reset", queries_path, method: "post", data: { confirm: "Sure?" }, class: 'border p-3 bg-red-500 text-white hover:bg-red-600 font-bold rounded' %>
+<%= link_to "add_extensions", queries_path, method: "post", data: { confirm: "Sure?" }, class: 'border p-3 bg-green-500 text-white hover:bg-green-600 font-bold rounded' %>

@@ -2,7 +2,7 @@
 <%= render "rails_pg_extras_web/shared/queries_selector" %>
 
 <% if @error %>
-  <span class="text-red"><%= @error %></span>
+  <div class="text-red-500 p-3 font-mono my-5"><%= @error %></div>
 <% else %>
   <% if @result&.any? %>
     <%= render "result",

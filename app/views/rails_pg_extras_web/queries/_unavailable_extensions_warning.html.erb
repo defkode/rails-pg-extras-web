@@ -6,43 +6,19 @@
  </div>
 
 
-<span id="rails" class="font-mono font-bold p-3 bg-gray-100 cursor-pointer select-none">RAILS</span>  <span id="sql" class="font-mono font-normal p-3 bg-gray-50 cursor-pointer select-none">SQL</span>
+<span id="rails" class="font-mono font-bold p-3 bg-gray-100 cursor-pointer select-none">RAILS</span>
 <pre id="rails_code" class="font-mono p-5 bg-gray-100 block">
   <% unavailable_extensions.each do |extension, queries| %>
 ActiveRecord::Base.connection.enable_extension "<%= extension %>"
   <% end %>
 </pre>
 
-<pre id="sql_code" class="font-mono p-5 bg-gray-100 hidden">
+<div class="my-5" />
+
+<span id="sql" class="font-mono font-bold p-3 bg-gray-100 cursor-pointer select-none">SQL</span>
+<pre id="sql_code" class="font-mono p-5 bg-gray-100">
   <% unavailable_extensions.each do |extension, queries| %>
 CREATE EXTENSION <%= extension %>;
   <% end %>
 </pre>
-
-<script>
-  const rails = document.getElementById('rails')
-  const sql = document.getElementById('sql')
-  const railsCode = document.getElementById('rails_code')
-  const sqlCode   = document.getElementById('sql_code')
-
-  rails.addEventListener('click', (e) => {
-    railsCode.classList.remove('hidden')
-    sqlCode.classList.add('hidden')
-
-    rails.classList.replace('bg-gray-50','bg-gray-100')
-    sql.classList.replace('bg-gray-100','bg-gray-50')
-    rails.classList.replace('font-normal','font-bold')
-    sql.classList.replace('font-bold','font-normal')
-  })
-
-  sql.addEventListener('click', (e) => {
-    railsCode.classList.add('hidden')
-    sqlCode.classList.remove('hidden')
-
-    rails.classList.replace('bg-gray-100','bg-gray-50')
-    sql.classList.replace('bg-gray-50','bg-gray-100')
-    rails.classList.replace('font-bold','font-normal')
-    sql.classList.replace('font-normal','font-bold')
-  })
-</script>
 
