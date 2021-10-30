@@ -1,11 +1,5 @@
 module RailsPgExtrasWeb
   class QueriesController < ApplicationController
-    REQUIRED_EXTENSIONS = {
-      pg_stat_statements: %i[calls outliers],
-      pg_buffercache: %i[buffercache_stats buffercache_usage],
-      sslinfo: %i[ssl_used]
-    }
-
     before_action :load_queries
     helper_method :unavailable_extensions
 
@@ -27,8 +21,8 @@ module RailsPgExtrasWeb
     private
 
     def load_queries
-      @all_queries = RailsPGExtras::QUERIES.inject({}) do |memo, query_name|
-        unless query_name.in? %i[kill_all mandelbrot]
+      @all_queries = (RailsPGExtras::QUERIES - ACTIONS).inject({}) do |memo, query_name|
+        unless query_name.in? %i[mandelbrot]
           memo[query_name] = { disabled: query_disabled?(query_name) }
         end
 
