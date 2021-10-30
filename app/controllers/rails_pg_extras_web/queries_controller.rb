@@ -3,8 +3,6 @@ module RailsPgExtrasWeb
     before_action :load_queries
     helper_method :unavailable_extensions
 
-    helper_method 
-
     def index
       if params[:query_name].present?
         @query_name = params[:query_name].to_sym.presence_in(@all_queries.keys)
@@ -17,12 +15,10 @@ module RailsPgExtrasWeb
         end
 
         render :show
-        
       end
     end
 
     private
-    
 
     def load_queries
       @all_queries = (RailsPGExtras::QUERIES - ACTIONS).inject({}) do |memo, query_name|

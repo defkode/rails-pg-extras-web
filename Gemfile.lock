@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    rails-pg-extras-web (3.0.4)
+    rails-pg-extras-web (3.1.0)
       pg (~> 1.2)
-      rails-pg-extras (~> 3.0)
+      rails-pg-extras (~> 3.1)
 
 GEM
   remote: https://rubygems.org/
@@ -19,18 +19,16 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    colorize (0.8.1)
     concurrent-ruby (1.1.9)
     filesize (0.2.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     minitest (5.14.4)
     pg (1.2.3)
-    rails-pg-extras (3.0.4)
+    rails-pg-extras (3.1.0)
       activerecord
-      ruby-pg-extras (= 3.0.4)
-    ruby-pg-extras (3.0.4)
-      colorize
+      ruby-pg-extras (= 3.1.0)
+    ruby-pg-extras (3.1.0)
       filesize
       pg
       terminal-table

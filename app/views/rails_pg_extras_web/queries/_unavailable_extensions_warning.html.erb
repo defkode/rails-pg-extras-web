@@ -5,20 +5,9 @@
   <% end %>
  </div>
 
-
-<span id="rails" class="font-mono font-bold p-3 bg-gray-100 cursor-pointer select-none">RAILS</span>
-<pre id="rails_code" class="font-mono p-5 bg-gray-100 block">
-  <% unavailable_extensions.each do |extension, queries| %>
-ActiveRecord::Base.connection.enable_extension "<%= extension %>"
-  <% end %>
-</pre>
-
-<div class="my-5" />
-
-<span id="sql" class="font-mono font-bold p-3 bg-gray-100 cursor-pointer select-none">SQL</span>
-<pre id="sql_code" class="font-mono p-5 bg-gray-100">
-  <% unavailable_extensions.each do |extension, queries| %>
-CREATE EXTENSION <%= extension %>;
-  <% end %>
-</pre>
+<%= link_to "Enable extensions", add_extensions_action_path,
+  method: "post",
+  data: {
+    confirm: "This command will enable following extensions: #{unavailable_extensions.keys.join(', ')}. Do you want to proceeed?"
+  }, class: 'border p-3 bg-green-500 text-white hover:bg-green-600 font-bold rounded' %>
 
