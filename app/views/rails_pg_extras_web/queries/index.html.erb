@@ -1,7 +1,7 @@
 <%= content_for :title, "pg_extras" %>
 <%= render "rails_pg_extras_web/shared/queries_selector" %>
 <%= render "unavailable_extensions_warning" if unavailable_extensions.any? %>
-<%= render "diagnose" if unavailable_extensions.none? %>
+<%= render "diagnose" %>
 
 <h1 class="font-bold text-xl my-5">Actions</h1>
 
