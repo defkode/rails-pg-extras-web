@@ -1,3 +1,3 @@
 module RailsPgExtrasWeb
-  VERSION = '3.1.0'
+  VERSION = '3.2.3'
 end

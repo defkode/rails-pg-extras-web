@@ -1,34 +1,33 @@
 PATH
   remote: .
   specs:
-    rails-pg-extras-web (3.1.0)
+    rails-pg-extras-web (3.2.3)
       pg (~> 1.2)
-      rails-pg-extras (~> 3.1)
+      rails-pg-extras (~> 3.2)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (6.1.4.1)
-      activesupport (= 6.1.4.1)
-    activerecord (6.1.4.1)
-      activemodel (= 6.1.4.1)
-      activesupport (= 6.1.4.1)
-    activesupport (6.1.4.1)
+    activemodel (7.0.0)
+      activesupport (= 7.0.0)
+    activerecord (7.0.0)
+      activemodel (= 7.0.0)
+      activesupport (= 7.0.0)
+    activesupport (7.0.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
     concurrent-ruby (1.1.9)
     filesize (0.2.0)
-    i18n (1.8.10)
+    i18n (1.8.11)
       concurrent-ruby (~> 1.0)
-    minitest (5.14.4)
+    minitest (5.15.0)
     pg (1.2.3)
-    rails-pg-extras (3.1.0)
+    rails-pg-extras (3.2.3)
       activerecord
-      ruby-pg-extras (= 3.1.0)
-    ruby-pg-extras (3.1.0)
+      ruby-pg-extras (= 3.2.3)
+    ruby-pg-extras (3.2.3)
       filesize
       pg
       terminal-table
@@ -37,7 +36,6 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
-    zeitwerk (2.5.1)
 
 PLATFORMS
   x86_64-darwin-18
@@ -47,4 +45,4 @@ DEPENDENCIES
   rails-pg-extras-web!
 
 BUNDLED WITH
-   2.2.29
+   2.2.32
