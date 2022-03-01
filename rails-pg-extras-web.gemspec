@@ -16,5 +16,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "pg", "~> 1.2"
-  spec.add_dependency "rails-pg-extras", "~> 3.2"
+  spec.add_dependency "rails-pg-extras", "~> 3.3"
+
+  spec.metadata = { "rubygems_mfa_required" => "true" }
 end
