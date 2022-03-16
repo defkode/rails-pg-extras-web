@@ -1,7 +1,11 @@
+# Important!
+RailsPgExtrasWeb is merged with [rails-pg-extras](https://github.com/pawurb/rails-pg-extras) since version **4.0.0**. Please used this gem instead.
+
+
 # RailsPgExtrasWeb
 Web UI for [rails-pg-extras](https://github.com/pawurb/rails-pg-extras)
 
-![WebUI](https://raw.githubusercontent.com/pawurb/rails-pg-extras/master/rails-pg-extras-web.png)
+![WebUI](https://github.com/pawurb/rails-pg-extras/raw/master/pg-extras-ui.png)
 
 ## Installation
 Add this line to your application's Gemfile:
