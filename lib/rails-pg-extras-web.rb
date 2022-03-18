@@ -1,5 +1,2 @@
-require "rails_pg_extras_web/engine"
-
-module RailsPgExtrasWeb
-  # Your code goes here...
-end
+require "rails_pg_extras_web/version"
+require "rails-pg-extras"

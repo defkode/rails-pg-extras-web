@@ -15,8 +15,8 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  spec.add_dependency "pg", "~> 1.2"
-  spec.add_dependency "rails-pg-extras", "~> 3.3"
+  spec.add_dependency "rails-pg-extras", ">= 4.0.0"
 
   spec.metadata = { "rubygems_mfa_required" => "true" }
+  spec.post_install_message = "rails-pg-extras-web is deprecated. Please use rails-pg-extras instead (>= 4.0.0)"
 end
